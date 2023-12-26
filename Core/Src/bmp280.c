@@ -160,6 +160,14 @@ HAL_StatusTypeDef bmp280_readSensor(void){
 	return res;
 }
 
+uint64_t bmp280_getTeperature(void){
+	return bmp280.temperature;
+}
+
+uint64_t bmp280_getPressure(void){
+	return bmp280.pressure;
+}
+
 HAL_StatusTypeDef bmp280_readCalibration(void){
 	HAL_StatusTypeDef res = HAL_OK;
 	uint8_t txData[26];

@@ -89,6 +89,8 @@ void bmp280_startMeasuring(void);
 uint8_t bmp280_readRegister(uint8_t register);
 HAL_StatusTypeDef bmp280_writeRegister(uint8_t rreg, uint8_t data);
 HAL_StatusTypeDef bmp280_readSensor(void);
+uint64_t bmp280_getTeperature(void);
+uint64_t bmp280_getPressure(void);
 HAL_StatusTypeDef bmp280_readCalibration(void);
 
 void bmp280_CsPinDisable(void);

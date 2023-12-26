@@ -47,7 +47,8 @@ DMA_HandleTypeDef hdma_spi1_tx;
 DMA_HandleTypeDef hdma_spi1_rx;
 
 /* USER CODE BEGIN PV */
-
+volatile float temp  = 0;
+volatile uint64_t press = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -110,6 +111,8 @@ int main(void)
 	  bmp280_startMeasuring();
 	  HAL_Delay(1000);
 	  bmp280_readSensor();
+	  temp = (float)bmp280_getTeperature() / 100;
+	  press = bmp280_getPressure() / 100;
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
